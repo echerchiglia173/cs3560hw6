@@ -1,5 +1,8 @@
-// File: game.h (part of the namespace main_savitch_14)
-
+///@file game.h
+/**
+ * \brief part of the namespace main_savitch_14.
+ * 			Class for implementing the core of the game and the ai.
+ */
 
 #ifndef MAIN_SAVITCH_GAME
 #define MAIN_SAVITCH_GAME
@@ -85,4 +88,3 @@ private:
 }
 
 #endif
-

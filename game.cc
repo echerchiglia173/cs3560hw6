@@ -1,4 +1,8 @@
-// File: game.cxx
+///@file game.cc
+/**
+ * \brief part of the namespace main_savitch_14.
+ * 			Class for implementing the core of the game and the ai.
+ */
 
 #include <cassert>    // Provides assert
 #include <climits>    // Provides INT_MAX and INT_MIN
@@ -7,6 +11,7 @@
 #include <string>     // Provides string
 #include "game.h"     // Provides definition of game class
 using namespace std;
+
 
 namespace main_savitch_14
 {
@@ -17,6 +22,11 @@ namespace main_savitch_14
 //*************************************************************************
 // PUBLIC MEMBER FUNCTIONS
 
+/**
+ * A normal member of type enum
+ * p;;ays one round of the game
+ * @return The winner of the game
+ */
 game::who game::play( )
 // The play function should not be overridden. It plays one round of the
 // game, with the human player moving first and the computer second.
@@ -45,11 +55,21 @@ game::who game::play( )
 //*************************************************************************
 // OPTIONAL VIRTUAL FUNCTIONS (overriding these functions is optional)
 
+/**
+ * A virtual member function taking a string and outputing it.
+ * @param message a constant refrence string
+ */
+
 void game::display_message(const string& message) const
 {
 	cout << message;
 }
 
+/**
+ * A virtual member that gets the user move and returns a string
+ * @see display_message()
+ * @return the userer move as a string
+ */
 string game::get_user_move( ) const
 {
 	string answer;
@@ -60,6 +80,11 @@ string game::get_user_move( ) const
 	return answer;
 }
 
+/**
+ * A virtual member that returns emu vlaue of type who for th person winning.
+ * @see evaluate()
+ * @return thw name of the perosn winning
+ */
 game::who game::winning()const {
 
 	int value = evaluate();
@@ -171,6 +196,3 @@ void game::make_human_move( ) {
 }
 
 }
-
-
-
