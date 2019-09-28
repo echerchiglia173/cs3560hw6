@@ -13,7 +13,7 @@ build: main.o game.o othello.o
 clean:
 	rm -f *.o a.out
 	rm -rf html latex
-	#removes html and latex directory/folder
+	@echo "removed html and latex directory/folder if present."
 
 #compiles the document file relies on Doxyfile configure.
 #if it is not present it makes one.
