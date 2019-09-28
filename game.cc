@@ -22,10 +22,13 @@ namespace main_savitch_14
 //*************************************************************************
 // PUBLIC MEMBER FUNCTIONS
 
-/**
- * A normal member of type enum
- * p;;ays one round of the game
- * @return The winner of the game
+/** A normal member with return type enum
+ * plays one round of the game
+ * @see display_status()
+ * @see countingPieces()
+ * @see make_human_move()
+ * @see make_computer_move()
+ * @return The winner of the game or neutral for a tie
  */
 game::who game::play( )
 // The play function should not be overridden. It plays one round of the
@@ -82,8 +85,9 @@ string game::get_user_move( ) const
 
 /**
  * A virtual member that returns emu vlaue of type who for th person winning.
+ * based on the value from evaluate
  * @see evaluate()
- * @return thw name of the perosn winning
+ * @return returns the name of the perosn winning or neutral if it is a tie
  */
 game::who game::winning()const {
 
@@ -99,11 +103,23 @@ game::who game::winning()const {
 
 }
 
-//*************************************************************************
+
 // PRIVATE FUNCTIONS (these are the same for every game)
 
+/**
+ * Private member taking two argument and returning an integer value.
+ * Evaluates the board postion  with lookahead for a single move recursively
+ * Evaluating the opnets moves and the computers moves, to see the outcome after so many moves were made.
+ * @see is_game_over()
+ * @see last_mover()
+ * @see compute_moves()
+ * @see make_move()
+ * @param  look_ahead as an integer for how deep it should go to evaluate the move
+ * @param  beat_this as a integer for the calue of another move
+ * @return THe value is larger if the position is good for the player who just moved
+ */
 int game::eval_with_lookahead(int look_ahead, int beat_this)
-// Evaluate a board position with lookahead.
+// Evaluates a board position with lookahead.
 // --int look_aheads:  How deep the lookahead should go to evaluate the move.
 // --int beat_this: Value of another move that we're considering. If the
 // current board position can't beat this, then cut it short.
@@ -149,7 +165,14 @@ int game::eval_with_lookahead(int look_ahead, int beat_this)
 	// The answer we return should be from player's perspective, so multiply times -1:
 	return -best_value;
 }
-
+///@breif private member that takes the computers turn.
+/**
+ * Determines the best move for the computer by finding all of the moves that can be made.
+ * Then evaluating each move and saving the best move to be made at the end.
+ * @see compute_moves()
+ * @see eval_with_lookahead()
+ *
+ */
 void game::make_computer_move( )
 {
 	queue<string> moves;
