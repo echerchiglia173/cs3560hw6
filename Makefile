@@ -2,7 +2,7 @@ CC = g++
 CFLAGS = -Wall
 
 
-all: build document
+all: build doc
 
 build: main.o game.o othello.o
 	$(CC) $(CFLAGS) main.o game.o othello.o
