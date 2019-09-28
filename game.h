@@ -1,16 +1,24 @@
 ///@file game.h
-/**
- * \brief part of the namespace main_savitch_14.
- * 			Class for implementing the core of the game and the ai.
- */
+
 
 #ifndef MAIN_SAVITCH_GAME
 #define MAIN_SAVITCH_GAME
 #include <queue>   // Provides queue<string>
 #include <string>  // Provides string
 
+/**
+ * namespace that includes the class game and othello.
+*/
+
 namespace main_savitch_14
 {
+
+ /// @brief part of the namespace main_savitch_14.
+ /** The game class implements the core parts of the game and the ai.
+ * Includes virtual functiosn and also purely virtual functions that are overwritten in
+ * othello class.
+ * Can be used by other classes to make a game with ai implemented.
+ */
 class game
 {
 public:
@@ -51,6 +59,14 @@ protected:
 	// The overriding function should call the original when it finishes.
 	// *******************************************************************
 	// Have the next player make a specified move:
+	//
+	/**
+	 * Purley virtual member that takes in one agument.
+	 * Function is implmented in the child class Othello.
+	 * That class makes the move for the player and the ai form the move inputed. At the end of that function it
+	 * calls the parnet class game function to increment the number of moves.
+	 * @param move a constant refrence string that holds the move that is going to be made.
+	 */
 	virtual void make_move(const std::string& move) { ++move_number; }
 	// Restart the game from the beginning:
 	virtual void restart( ) { move_number = 0; }

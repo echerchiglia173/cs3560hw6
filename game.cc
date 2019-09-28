@@ -1,8 +1,4 @@
 ///@file game.cc
-/**
- * \brief part of the namespace main_savitch_14.
- * 			Class for implementing the core of the game and the ai.
- */
 
 #include <cassert>    // Provides assert
 #include <climits>    // Provides INT_MAX and INT_MIN
@@ -15,6 +11,7 @@ using namespace std;
 
 namespace main_savitch_14
 {
+
 //*************************************************************************
 // STATIC MEMBER CONSTANTS
 // const int game::SEARCH_LEVELS;
@@ -59,7 +56,7 @@ game::who game::play( )
 // OPTIONAL VIRTUAL FUNCTIONS (overriding these functions is optional)
 
 /**
- * A virtual member function taking a string and outputing it.
+ * A virtual member function taking a string and outputing it to the screen.
  * @param message a constant refrence string
  */
 
@@ -205,6 +202,14 @@ void game::make_computer_move( )
 	// Make the best move.
 	make_move(best_move);
 }
+
+/**
+ * Privat member that makes the move for the user. Input the move the user want to make and the makes sure its a legal move.
+ * if its not legal it reasj for a move. Once the move is legal that move is made.
+ * @see get_user_move()
+ * @see is_legal()
+ * @see  make_move()
+ */
 
 void game::make_human_move( ) {
 	string move;
