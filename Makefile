@@ -12,10 +12,15 @@ build: main.o game.o othello.o
 
 clean:
 	rm -f *.o a.out
+	rm -rf html latex
+	#removes html and latex directory/folder
 
-document: Doxyfile
+#compiles the document file relies on Doxyfile configure.
+#if it is not present it makes one.
+doc: Doxyfile
 	doxygen Doxyfile
 
-# creates config file, must set input and output for code or defaults to where config file is at.
+# creates config file, must set input and output for code and documen.
+# Else it  defaults to where config file is at for the sourcd code and output of the document.
 Doxyfile:
 	doxygen -g
