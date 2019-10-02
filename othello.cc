@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+///@file othello.cc
 // Brock Ferrell
 // CS2401
 // November 23, 2015
 // Project7
 ///@file othello.cc
->>>>>>> 8167909e02875988575f8f485ef84d27abeacfaf
+
 
 #include "othello.h"
 

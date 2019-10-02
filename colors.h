@@ -1,3 +1,6 @@
+///@file colors.h
+/// file using escape code to create colors.
+
 //***********************************************************
 //
 //  File:     colors.h

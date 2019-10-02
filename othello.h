@@ -15,7 +15,7 @@ using namespace std;
 
 namespace main_savitch_14
 {
-/// this is the othelo class using the game clas
+/// this is the othelo class using the game class
 class Othello: public game {
 public:
 	/// this is the constructor for the othello class
