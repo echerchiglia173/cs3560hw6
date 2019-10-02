@@ -1,3 +1,5 @@
+/// @file othello.h
+
 // Brock Ferrell
 // CS2401
 // November 23, 2015
@@ -13,12 +15,11 @@ using namespace std;
 
 namespace main_savitch_14
 {
-
+/// this is the othelo class using the game clas
 class Othello: public game {
 public:
-
+	/// this is the constructor for the othello class
 	Othello() {}
-
 	void display_status()const;
 	int evaluate()const;
 	bool is_game_over()const;
@@ -41,10 +42,9 @@ protected:
 	int w;
 
 private:
+	///this is a double array that identifies the gameboard
 	piece gameBoard[8][8];
 };
 }
 
 #endif
-
-
