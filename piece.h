@@ -1,3 +1,4 @@
+///@ file piece.h
 // Brock Ferrell
 // CS2401
 // November 23, 2015
@@ -7,10 +8,11 @@
 #define PIECE_H
 enum color {black, white, blank};
 
+///Class that declares the pieces for th game othello
 class piece {
 public:
 	piece() {theColor = blank;}
-
+	///A member function that changes the piece color to the opposite color.
 	void flip()
 	{
 		if (theColor == white) {
