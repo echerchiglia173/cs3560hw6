@@ -1,3 +1,4 @@
+///@file othello.cc
 // Brock Ferrell
 // CS2401
 // November 23, 2015
@@ -7,6 +8,11 @@
 
 namespace main_savitch_14
 {
+
+/** Function to print current board to the screen
+* @see is_black()
+* @see is_white()
+*/
 
 void Othello::display_status()const
 {
@@ -48,6 +54,10 @@ void Othello::display_status()const
   cout << "\nEnter a move in the format(letter,number) (Ex: A3)" << endl;
 }
 
+
+/** Function to take user move input and update board with move
+* @param move constant referance to string
+*/
 void Othello::make_move(const string& move) {
 
   int c, r;
@@ -189,7 +199,10 @@ void Othello::make_move(const string& move) {
   move_number++;
 }
 
-
+/** Sets board back to starting positions.
+* @see set_black()
+* @see set_white()
+ */
 void Othello::restart() {
 
   gameBoard[3][3].set_white();
@@ -202,6 +215,11 @@ void Othello::restart() {
   skips = 0;
   openSpots = 60;
 }
+
+/** Decides if a move to be made is legal
+* @param move constant referance to string
+* @return true if move is legal
+*/
 
 bool Othello::is_legal(const string& move)const {
 
