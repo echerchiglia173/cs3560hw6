@@ -9,7 +9,7 @@
 #include "othello.h"
 using namespace main_savitch_14;
 
-/// this is the main program
+/// this is the main program that will run the game/ restart the game/ and play the game
 int main()
 {
 /// This command will run the game
