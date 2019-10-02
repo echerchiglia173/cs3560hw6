@@ -1,7 +1,8 @@
-// Brock Ferrell
-// CS2401
-// November 23, 2015
-// Project7
+/// Brock Ferrell
+/// CS2401
+/// November 23, 2015
+/// Project7
+///@file othello.cc
 
 #include "othello.h"
 
@@ -379,6 +380,15 @@ bool Othello::is_legal(const string& move)const {
     }
   }
 }
+
+/**
+ * A virtual member that counts the number of black and white pieces on the game
+ * board and displays them as well as the total number of open spaces left on
+ * the board.
+ * @see is_white()
+ * @see is_black()
+ * @see moves_completed()
+ */
 
 void Othello::countingPieces() {
 
